@@ -1,13 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Card from './Card';
+import sdata from './sdata';
 import * as serviceWorker from './serviceWorker';
 
+
+
+
+
+
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <>
+<h1 className="heading_style">List Of top 12 NetFlix series in 2020</h1>
+
+ {sdata.map((val) => {
+return (
+  <Card 
+  imgsrc={val.imgsrc}
+  sname={val.tittle}
+  tittle={val.sname}
+  link={val.link}
+  ></Card>
+);
+})}
+ 
+  </>,
   document.getElementById('root')
 );
 
